@@ -62,6 +62,16 @@ class RangkaianAcara extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextButton(
+                onPressed: () {},
+                child: Cart(
+                  foto: "assets/festival_seni.png",
+                  judul: "FESTIVAL SENI",
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -73,16 +83,9 @@ class RangkaianAcara extends StatelessWidget {
                   );
                 },
                 child: Cart(
-                  foto: "assets/festival_seni.png",
-                  judul: "FESTIVAL SENI",
+                  foto: "assets/pasar_rakyat.png",
+                  judul: "PASAR RAKYAT",
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Cart(
-                foto: "assets/pasar_rakyat.png",
-                judul: "PASAR RAKYAT",
               ),
               SizedBox(height: 70),
               Image.asset("assets/decoration.png"),

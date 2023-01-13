@@ -49,40 +49,51 @@ class Pasar extends StatelessWidget {
 class Informasi extends StatelessWidget {
   String angka;
   String text;
+  Color warna;
 
   Informasi({
     required this.angka,
     required this.text,
+    required this.warna,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
-      height: 300,
-      color: Color(0xff171717),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            angka,
-            style: GoogleFonts.montserrat(
-              fontSize: 64,
-              fontWeight: FontWeight.w900,
-              color: Color(0xffF0F0F0),
-            ),
+    return Column(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width * 0.7,
+          height: 300,
+          color: Color(0xff171717),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                angka,
+                style: GoogleFonts.montserrat(
+                  fontSize: 64,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xffF0F0F0),
+                ),
+              ),
+              Text(
+                text,
+                style: GoogleFonts.montserrat(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xffF0F0F0),
+                ),
+              ),
+            ],
           ),
-          Text(
-            text,
-            style: GoogleFonts.montserrat(
-              fontSize: 32,
-              fontWeight: FontWeight.w900,
-              color: Color(0xffF0F0F0),
-            ),
-          ),
-        ],
-      ),
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.7,
+          height: 20,
+          color: warna,
+        ),
+      ],
     );
   }
 }

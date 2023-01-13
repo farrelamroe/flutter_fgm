@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import "package:flutter/material.dart";
 import 'package:flutter_fgm/widgets/pasar.dart';
 import "package:google_fonts/google_fonts.dart";
@@ -76,7 +78,7 @@ class PasarRakyat extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 800,
+                  height: MediaQuery.of(context).size.height * 2.5,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -157,6 +159,21 @@ class PasarRakyat extends StatelessWidget {
                               color: Color(0xff4A8068),
                             ),
                           ],
+                        ),
+                        Informasi(
+                          angka: "4",
+                          text: "Kategori",
+                          warna: Color(0xffE62C20),
+                        ),
+                        Informasi(
+                          angka: "66",
+                          text: "Tenants",
+                          warna: Color(0xff9C4A9A),
+                        ),
+                        Informasi(
+                          angka: "350",
+                          text: "Produk",
+                          warna: Color(0xffF69722),
                         ),
                       ],
                     ),

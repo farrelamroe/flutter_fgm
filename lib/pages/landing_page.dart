@@ -4,7 +4,13 @@ import "package:flutter/material.dart";
 import 'package:flutter_fgm/pages/rangkaian_acara.dart';
 import "package:google_fonts/google_fonts.dart";
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +32,7 @@ class LandingPage extends StatelessWidget {
           ),
         ),
       ),
+      backgroundColor: Color(0xff171717),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -71,7 +78,6 @@ class LandingPage extends StatelessWidget {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w700,
                                 color: Color(0xffF0F0F0),
-
                               ),
                             ),
                             SizedBox(width: 25),
@@ -108,12 +114,12 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.57,1),
+                          alignment: Alignment(-0.57, 1),
                           width: double.infinity,
                           child: TextButton(
                             style: TextButton.styleFrom(
                               backgroundColor: Color(0xffEEEEEE),
-                              ),
+                            ),
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -147,6 +153,234 @@ class LandingPage extends StatelessWidget {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Column(
+                children: [
+                  Image.asset("assets/decorplus.png"),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = 0;
+                            });
+                          },
+                          child: Text(
+                            "TEMA BESAR",
+                            style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontSize: 20,
+                              fontWeight: selectedIndex == 0
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                              color: Color(0xffF0F0F0),
+                            ),
+                          ),
+                        ),
+                        VerticalDivider(
+                          color: Color(0xffF0F0F0),
+                          thickness: 5,
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = 1;
+                            });
+                          },
+                          child: Text(
+                            "TAGLINE",
+                            style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontSize: 20,
+                              fontWeight: selectedIndex == 1
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                              color: Color(0xffF0F0F0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 500,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(
+                          () {
+                            selectedIndex = 0;
+                          },
+                        );
+                      },
+                      child: selectedIndex == 0
+                          ? Image.asset("assets/tema_besar.png")
+                          : Center(
+                              child: Text(
+                                "CIPTA MANGUN KARYA LAHIRKAN HARMONI KERAGAMAN BANGSA",
+                                style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  fontSize: 36,
+                                  fontWeight: FontWeight.w900,
+                                  color: Color(0xffF0F0F0),
+                                ),
+                              ),
+                            ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Image.asset("assets/decor.png"),
+            SizedBox(
+              height: 22,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 44,
+                vertical: 32,
+              ),
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 2.5,
+              color: Color(0xff242424),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Text(
+                      "MASKOT KITA",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xffF0F0F0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 28,
+                  ),
+                  Image.asset("assets/cindaru.png"),
+                  Divider(
+                    color: Color(0xffF0F0F0),
+                    thickness: 5,
+                    height: 50,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: "Gabungan kata dari\n",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xffF0F0F0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Cindaku",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffF0F0F0),
+                            backgroundColor: Color(0xffE62C20)
+                          ),
+                        ),
+                        TextSpan(
+                          text: " dan ",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xffF0F0F0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Aru.",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffF0F0F0),
+                            backgroundColor: Color(0xff4A8068)
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 28,),
+                  RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: "Cindaku ",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffF0F0F0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "merupakan makhluk mitologi berupa",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xffF0F0F0),
+                            
+                          ),
+                        ),
+                        TextSpan(
+                          text: " manusia harimau. Aru ",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffF0F0F0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "merupakan",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xffF0F0F0),
+                            
+                          ),
+                        ),
+                        TextSpan(
+                          text: " gelar bangsawan ",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffF0F0F0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "dalam suku bugis",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xffF0F0F0),
+                            
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
