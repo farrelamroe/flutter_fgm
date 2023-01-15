@@ -3,6 +3,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_fgm/pages/rangkaian_acara.dart';
 import "package:google_fonts/google_fonts.dart";
+import "package:flutter_fgm/widgets/pasar.dart";
 
 class LandingPage extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _LandingPageState extends State<LandingPage> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 600,
+                  height: MediaQuery.of(context).size.height * 1,
                   decoration: BoxDecoration(
                     color: Color(0xff1A1A1A),
                   ),
@@ -68,37 +69,43 @@ class _LandingPageState extends State<LandingPage> {
                         SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "FESTIVAL",
-                              style: TextStyle(
-                                fontFamily: "Montserrat",
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xffF0F0F0),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 65.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "FESTIVAL",
+                                style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xffF0F0F0),
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 25),
-                            Image.asset("assets/yellow_block.png"),
-                          ],
+                              SizedBox(width: 25),
+                              Image.asset("assets/yellow_block.png"),
+                            ],
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "GADJAH MADA",
-                              style: TextStyle(
-                                fontFamily: "Montserrat",
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xffF0F0F0),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 65.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "GADJAH MADA",
+                                style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xffF0F0F0),
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 10),
-                            Image.asset("assets/red_block.png"),
-                          ],
+                              SizedBox(width: 10),
+                              Image.asset("assets/red_block.png"),
+                            ],
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -110,11 +117,15 @@ class _LandingPageState extends State<LandingPage> {
                             "Festival Gadjah Mada merupakan sebuah festival yang menyajikan kreasi budaya dan seni tradisional melalui pengemasan yang modern. Pada tahun ini, Festival Gadjah Mada akan menyemarakkan rangkaian acaranya melalui festival seni, pasar rakyat, dan pentas teater.",
                             style: TextStyle(
                               color: Color(0xffF0F0F0),
+                              fontFamily: "Montserrat",
                             ),
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.57, 1),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 65,
+                          ),
+                          alignment: Alignment.topLeft,
                           width: double.infinity,
                           child: TextButton(
                             style: TextButton.styleFrom(
@@ -169,9 +180,11 @@ class _LandingPageState extends State<LandingPage> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            setState(() {
-                              selectedIndex = 0;
-                            });
+                            setState(
+                              () {
+                                selectedIndex = 0;
+                              },
+                            );
                           },
                           child: Text(
                             "TEMA BESAR",
@@ -255,8 +268,8 @@ class _LandingPageState extends State<LandingPage> {
                 horizontal: 44,
                 vertical: 32,
               ),
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 2.5,
+              width: MediaQuery.of(context).size.height * 1,
+              height: MediaQuery.of(context).size.height * 1,
               color: Color(0xff242424),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -294,11 +307,10 @@ class _LandingPageState extends State<LandingPage> {
                         TextSpan(
                           text: "Cindaku",
                           style: GoogleFonts.montserrat(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xffF0F0F0),
-                            backgroundColor: Color(0xffE62C20)
-                          ),
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xffF0F0F0),
+                              backgroundColor: Color(0xffE62C20)),
                         ),
                         TextSpan(
                           text: " dan ",
@@ -311,16 +323,17 @@ class _LandingPageState extends State<LandingPage> {
                         TextSpan(
                           text: "Aru.",
                           style: GoogleFonts.montserrat(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xffF0F0F0),
-                            backgroundColor: Color(0xff4A8068)
-                          ),
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xffF0F0F0),
+                              backgroundColor: Color(0xff4A8068)),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 28,),
+                  SizedBox(
+                    height: 28,
+                  ),
                   RichText(
                     text: TextSpan(
                       children: <TextSpan>[
@@ -338,7 +351,6 @@ class _LandingPageState extends State<LandingPage> {
                             fontSize: 30,
                             fontWeight: FontWeight.w400,
                             color: Color(0xffF0F0F0),
-                            
                           ),
                         ),
                         TextSpan(
@@ -355,7 +367,6 @@ class _LandingPageState extends State<LandingPage> {
                             fontSize: 30,
                             fontWeight: FontWeight.w400,
                             color: Color(0xffF0F0F0),
-                            
                           ),
                         ),
                         TextSpan(
@@ -372,7 +383,6 @@ class _LandingPageState extends State<LandingPage> {
                             fontSize: 30,
                             fontWeight: FontWeight.w400,
                             color: Color(0xffF0F0F0),
-                            
                           ),
                         ),
                       ],
@@ -380,7 +390,117 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
-            )
+            ),
+            ClipPath(
+              clipper: MyClipper(),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 2,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 32,
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0xff171717),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "assets/maskot.png",
+                    ),
+                    SizedBox(
+                      height: 55,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 34,
+                      ),
+                      width: double.infinity,
+                      height: 35,
+                      color: Color(0xff242424),
+                      child: Text(
+                        "HARAPAN",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xffF0F0F0),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 34.0, vertical: 24),
+                      child: RichText(
+                        textAlign: TextAlign.right,
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text:
+                                  "Melalui sosok Cindaru, Festival Gadjah Mada 2022 diharapkan dapat menjadi ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "simbol kebijaksanaan ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "dan ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "kekuatan ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "masyarakat dalam mempertahankan ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "keselarasan ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                            TextSpan(
+                              text: "dalam kediversitasan budaya di Nusantara ",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 30,
+                                color: Color(0xffF0F0F0),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Image.asset("assets/kembang1.png"),
           ],
         ),
       ),

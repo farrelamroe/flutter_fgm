@@ -90,86 +90,86 @@ class RangkaianAcara extends StatelessWidget {
               SizedBox(height: 70),
               Image.asset("assets/decoration.png"),
               SizedBox(height: 60),
-              // CarouselSlider(
-              //   options: CarouselOptions(
-              //     height: 250.0,
-              //     viewportFraction: 0.8,
-              //     initialPage: 0,
-              //     enableInfiniteScroll: false,
-              //     autoPlay: true,
-              //     autoPlayInterval: Duration(seconds: 3),
-              //     autoPlayAnimationDuration: Duration(milliseconds: 800),
-              //     autoPlayCurve: Curves.fastOutSlowIn,
-              //     enlargeCenterPage: true,
-              //     enlargeFactor: 0.4,
-              //   ),
-              //   items: data.map(
-              //     (i) {
-              //       return Container(
-              //         padding: EdgeInsets.all(10),
-              //         width: 250,
-              //         decoration: BoxDecoration(
-              //           color: Color(0xff202020),
-              //         ),
-              //         child: Column(
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           children: [
-              //             Text(
-              //               '$i',
-              //               style: GoogleFonts.montserrat(
-              //                 fontSize: 32,
-              //                 fontWeight: FontWeight.w700,
-              //                 color: Color(0xffF0F0F0),
-              //               ),
-              //             ),
-              //             SizedBox(height: 5),
-              //             Image.asset("assets/line.png"),
-              //             Spacer(),
-              //             Column(
-              //               children: [
-              //                 Row(
-              //                   children: [
-              //                     Icon(
-              //                       Icons.calendar_month_outlined,
-              //                       color: Colors.white,
-              //                     ),
-              //                     Text(
-              //                       "1 Januari 2023",
-              //                       style: GoogleFonts.montserrat(
-              //                         color: Colors.white,
-              //                         fontSize: 16,
-              //                         fontWeight: FontWeight.w500,
-              //                       ),
-              //                     )
-              //                   ],
-              //                 ),
-              //                 SizedBox(
-              //                   height: 10,
-              //                 ),
-              //                 Row(
-              //                   children: [
-              //                     Icon(
-              //                       Icons.pin_drop_outlined,
-              //                       color: Colors.white,
-              //                     ),
-              //                     Text(
-              //                       "kiostix.com",
-              //                       style: GoogleFonts.montserrat(
-              //                         color: Colors.white,
-              //                         fontSize: 16,
-              //                         fontWeight: FontWeight.w500,
-              //                       ),
-              //                     )
-              //                   ],
-              //                 ),
-              //               ],
-              //             )
-              //           ],
-              //         ),
-              //       );
-              //     },
-              //   ).toList(),
-              // ),
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 250.0,
+                  viewportFraction: 0.8,
+                  initialPage: 0,
+                  enableInfiniteScroll: false,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.4,
+                ),
+                items: data.map(
+                  (i) {
+                    return Container(
+                      padding: EdgeInsets.all(10),
+                      width: 250,
+                      decoration: BoxDecoration(
+                        color: Color(0xff202020),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '$i',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xffF0F0F0),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Image.asset("assets/line.png"),
+                          Spacer(),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.calendar_month_outlined,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "1 Januari 2023",
+                                    style: GoogleFonts.montserrat(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.pin_drop_outlined,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "kiostix.com",
+                                    style: GoogleFonts.montserrat(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ).toList(),
+              ),
               const SizedBox(height: 100),
               Image.asset(
                 "assets/sponsor.png",
@@ -190,7 +190,7 @@ class RangkaianAcara extends StatelessWidget {
               const SizedBox(height: 20),
               Container(
                 width: MediaQuery.of(context).size.width * 0.8,
-                height: 400,
+                height: MediaQuery.of(context).size.height * 1,
                 color: const Color(0xff242424),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
