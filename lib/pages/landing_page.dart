@@ -178,23 +178,28 @@ class _LandingPageState extends State<LandingPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(
-                              () {
-                                selectedIndex = 0;
-                              },
-                            );
-                          },
-                          child: Text(
-                            "TEMA BESAR",
-                            style: TextStyle(
-                              fontFamily: "Montserrat",
-                              fontSize: 20,
-                              fontWeight: selectedIndex == 0
-                                  ? FontWeight.w700
-                                  : FontWeight.w500,
-                              color: Color(0xffF0F0F0),
+                        AnimatedSwitcher(
+                          duration: Duration(seconds: 1),
+                          transitionBuilder: (child, animation) =>
+                              ScaleTransition(scale: animation, child: child),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(
+                                () {
+                                  selectedIndex = 0;
+                                },
+                              );
+                            },
+                            child: Text(
+                              "TEMA BESAR",
+                              style: TextStyle(
+                                fontFamily: "Montserrat",
+                                fontSize: 20,
+                                fontWeight: selectedIndex == 0
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                                color: Color(0xffF0F0F0),
+                              ),
                             ),
                           ),
                         ),
@@ -203,21 +208,26 @@ class _LandingPageState extends State<LandingPage> {
                           thickness: 5,
                           width: 10,
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedIndex = 1;
-                            });
-                          },
-                          child: Text(
-                            "TAGLINE",
-                            style: TextStyle(
-                              fontFamily: "Montserrat",
-                              fontSize: 20,
-                              fontWeight: selectedIndex == 1
-                                  ? FontWeight.w700
-                                  : FontWeight.w500,
-                              color: Color(0xffF0F0F0),
+                        AnimatedSwitcher(
+                          duration: Duration(seconds: 1),
+                          transitionBuilder: (child, animation) =>
+                              ScaleTransition(scale: animation, child: child),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedIndex = 1;
+                              });
+                            },
+                            child: Text(
+                              "TAGLINE",
+                              style: TextStyle(
+                                fontFamily: "Montserrat",
+                                fontSize: 20,
+                                fontWeight: selectedIndex == 1
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                                color: Color(0xffF0F0F0),
+                              ),
                             ),
                           ),
                         ),

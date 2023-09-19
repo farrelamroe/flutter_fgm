@@ -1,8 +1,31 @@
 import "package:flutter/material.dart";
 import 'package:flutter_fgm/pages/landing_page.dart';
 import "package:google_fonts/google_fonts.dart";
+import 'package:http/http.dart' as http;
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  late final TextEditingController _email;
+  late final TextEditingController _password;
+  final _formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    _email = TextEditingController();
+    _password = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,15 +138,22 @@ class LoginPage extends StatelessWidget {
                   child: InkWell(
                     splashColor: Colors.amber,
                     borderRadius: BorderRadius.circular(17),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LandingPage();
-                          },
-                        ),
-                      );
+                    onTap: () async {
+                      if (_formKey.currentState!.validate()) {
+                        try {
+                          var response = await http.post(
+                            Uri.parse(
+                                'https://retoolapi.dev/B13laa/getusers?${_email.text}user_id=&password=${_password.text}'),
+                            body: ({
+                              'email': _email.text,
+                              'password': _password.text,
+                            }),
+                          );
+                          print(response.body);
+                        } catch (e) {
+                          print(e.toString());
+                        }
+                      }
                     },
                     child: Center(
                       child: Text(
